@@ -26,11 +26,11 @@
 .h2c h5 { font-size: var(--h2c-h5); }
 .h2c h6 { font-size: var(--h2c-h6); }
 
-.h2c a {
+.h2c a:not(.btn) {
   color: var(--h2c-info);
   text-decoration: none;
 }
-.h2c a:hover { text-decoration: underline; }
+.h2c a:not(.btn):hover { text-decoration: underline; }
 
 /* ---- Buttons (pill-shaped, per site convention) ---- */
 .btn {

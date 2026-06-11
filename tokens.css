@@ -1,0 +1,68 @@
+/* ==========================================================================
+   Here to Career — Design Tokens
+   Extracted from the compiled theme at career.ja.org (Bootstrap 4 base).
+   Import this file alone to theme any project with the H2C brand.
+   ========================================================================== */
+
+:root {
+  /* ---- Brand color ---- */
+  --h2c-primary: #285f74;        /* deep teal — primary actions, headings */
+  --h2c-primary-dark: #23404d;   /* dark slate teal — hovers, footer, hero */
+  --h2c-secondary: #00a0af;      /* bright teal — secondary actions, accents */
+  --h2c-info: #0081ca;           /* JA blue — links, informational */
+  --h2c-success: #009424;        /* green — success states */
+  --h2c-warning: #f3f2b3;        /* pale yellow — warning surfaces (dark text) */
+  --h2c-danger: #e47272;         /* soft red — errors, destructive actions */
+
+  /* ---- Neutrals ---- */
+  --h2c-dark: #232628;
+  --h2c-gray-dark: #414245;
+  --h2c-gray: #626366;
+  --h2c-gray-light: #a6a6a6;
+  --h2c-border: #e5e7ea;
+  --h2c-surface: #f8f9fa;
+  --h2c-white: #ffffff;
+
+  /* ---- Tints ---- */
+  --h2c-teal-tint: #c3edef;      /* light teal — highlighted surfaces, chips */
+  --h2c-primary-tint: #e9eff2;   /* light primary wash — section backgrounds */
+
+  /* ---- Typography ---- */
+  --h2c-font-family: "Montserrat", "Open Sans", helvetica, arial, sans-serif;
+  --h2c-font-size-base: 1rem;          /* 16px */
+  --h2c-font-size-sm: 0.875rem;
+  --h2c-font-size-lg: 1.25rem;
+  --h2c-h1: 2.5rem;
+  --h2c-h2: 2rem;
+  --h2c-h3: 1.75rem;
+  --h2c-h4: 1.5rem;
+  --h2c-h5: 1.25rem;
+  --h2c-h6: 1rem;
+  --h2c-weight-regular: 400;
+  --h2c-weight-medium: 500;
+  --h2c-weight-semibold: 600;
+  --h2c-weight-bold: 700;
+  --h2c-line-height: 1.5;
+
+  /* ---- Shape ---- */
+  --h2c-radius-sm: 0.25rem;      /* inputs, small elements */
+  --h2c-radius-md: 6px;          /* dropdowns, popovers */
+  --h2c-radius-lg: 10px;         /* cards */
+  --h2c-radius-xl: 1rem;         /* feature panels */
+  --h2c-radius-pill: 100px;      /* buttons, chips */
+
+  /* ---- Elevation ---- */
+  --h2c-shadow-sm: 0 1px 3px rgba(35, 64, 77, 0.12);
+  --h2c-shadow-md: 0 4px 12px rgba(35, 64, 77, 0.15);
+  --h2c-shadow-lg: 0 10px 30px rgba(35, 64, 77, 0.2);
+
+  /* ---- Spacing (Bootstrap 4 scale) ---- */
+  --h2c-space-1: 0.25rem;
+  --h2c-space-2: 0.5rem;
+  --h2c-space-3: 1rem;
+  --h2c-space-4: 1.5rem;
+  --h2c-space-5: 3rem;
+
+  /* ---- Breakpoints (reference only — use in media queries) ----
+     sm: 576px | md: 768px | lg: 992px | xl: 1200px */
+}

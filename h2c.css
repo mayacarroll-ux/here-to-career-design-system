@@ -216,11 +216,15 @@
    Alerts
    ========================================================================== */
 .alert {
+  display: flex;
+  align-items: center;
+  gap: var(--h2c-space-2);
   padding: var(--h2c-space-3);
   border: 1px solid transparent;
   border-radius: var(--h2c-radius-md);
   margin-bottom: var(--h2c-space-3);
 }
+.alert .alert-icon { flex-shrink: 0; display: inline-flex; width: 20px; height: 20px; }
 .alert-info    { background: var(--h2c-info-surface);    color: var(--h2c-primary-dark); border-color: var(--h2c-info); }
 .alert-success { background: var(--h2c-success-surface); color: var(--h2c-success);      border-color: var(--h2c-success); }
 .alert-warning { background: var(--h2c-warning-surface); color: var(--h2c-text-heading); border-color: var(--h2c-warning); }
@@ -362,3 +366,144 @@
 }
 .hero-h2c h1, .hero-h2c h2 { color: var(--h2c-text-invert); }
 .hero-h2c p { opacity: .9; max-width: 60ch; }
+
+/* ==========================================================================
+   Application bar (dark top navigation)
+   ========================================================================== */
+.appbar {
+  display: flex;
+  align-items: center;
+  gap: var(--h2c-space-4);
+  padding: var(--h2c-space-3) var(--h2c-space-4);
+  background: var(--h2c-primary-dark);
+  color: var(--h2c-text-invert);
+  font-family: var(--h2c-font-family);
+}
+.appbar .appbar-brand {
+  font-weight: var(--h2c-weight-bold);
+  letter-spacing: .02em;
+  color: var(--h2c-text-invert);
+  text-decoration: none;
+}
+.appbar .appbar-spacer { flex: 1; }
+.appbar .nav-link {
+  color: rgba(255, 255, 255, .75);
+  font-weight: var(--h2c-weight-medium);
+  text-decoration: none;
+}
+.appbar .nav-link:hover { color: var(--h2c-text-invert); }
+.appbar .nav-link.active { color: var(--h2c-text-invert); font-weight: var(--h2c-weight-semibold); }
+/* "Donate"-style accent button on the dark bar */
+.btn-accent {
+  color: var(--h2c-text-on-accent);
+  background: var(--h2c-accent);
+  border-color: var(--h2c-accent);
+}
+.btn-accent:hover { filter: brightness(.95); }
+
+/* ==========================================================================
+   Sidebar navigation
+   ========================================================================== */
+.sidebar-nav {
+  width: 240px;
+  padding: var(--h2c-space-2);
+  background: var(--h2c-surface);
+  border-right: 1px solid var(--h2c-border);
+  font-family: var(--h2c-font-family);
+}
+.sidebar-nav .sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: var(--h2c-space-2);
+  padding: 10px 14px;
+  margin-bottom: var(--h2c-space-1);
+  border-radius: var(--h2c-radius-md);
+  border-left: 3px solid transparent;
+  color: var(--h2c-text);
+  font-weight: var(--h2c-weight-medium);
+  text-decoration: none;
+}
+.sidebar-nav .sidebar-item .sidebar-icon { color: var(--h2c-text-muted); display: inline-flex; }
+.sidebar-nav .sidebar-item:hover { background: var(--h2c-surface-subtle); }
+.sidebar-nav .sidebar-item.active {
+  background: var(--h2c-tint);
+  color: var(--h2c-primary);
+  border-left-color: var(--h2c-primary);
+  font-weight: var(--h2c-weight-semibold);
+}
+.sidebar-nav .sidebar-item.active .sidebar-icon { color: var(--h2c-primary); }
+
+/* ==========================================================================
+   Breadcrumb
+   ========================================================================== */
+.breadcrumb-h2c {
+  display: flex;
+  align-items: center;
+  gap: var(--h2c-space-2);
+  font-size: var(--h2c-font-size-sm);
+  font-family: var(--h2c-font-family);
+}
+.breadcrumb-h2c a { color: var(--h2c-text-muted); text-decoration: none; }
+.breadcrumb-h2c a:hover { color: var(--h2c-primary); }
+.breadcrumb-h2c .separator { color: var(--h2c-text-muted); }
+.breadcrumb-h2c .current { color: var(--h2c-primary); font-weight: var(--h2c-weight-semibold); }
+
+/* ==========================================================================
+   Toast notification
+   ========================================================================== */
+.toast-h2c {
+  display: flex;
+  align-items: center;
+  gap: var(--h2c-space-2);
+  min-width: 260px;
+  padding: var(--h2c-space-2) var(--h2c-space-3);
+  background: var(--h2c-surface);
+  border: 1px solid var(--h2c-border);
+  border-radius: var(--h2c-radius-lg);
+  box-shadow: var(--h2c-shadow-md);
+}
+.toast-h2c .toast-icon { flex-shrink: 0; display: inline-flex; }
+.toast-h2c.is-success .toast-icon { color: var(--h2c-success); }
+.toast-h2c.is-error   .toast-icon { color: var(--h2c-danger); }
+.toast-h2c.is-info    .toast-icon { color: var(--h2c-info); }
+.toast-h2c .toast-body { flex: 1; }
+.toast-h2c .toast-title { font-weight: var(--h2c-weight-bold); color: var(--h2c-text-heading); }
+.toast-h2c .toast-text { font-size: var(--h2c-font-size-sm); color: var(--h2c-text-muted); }
+.toast-h2c .toast-close { background: none; border: none; color: var(--h2c-text-muted); cursor: pointer; padding: 2px; }
+
+/* ==========================================================================
+   Modal / dialog
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--h2c-space-3);
+  background: rgba(34, 64, 77, .8);   /* blue-black overlay */
+}
+.modal-h2c {
+  width: 100%;
+  max-width: 460px;
+  background: var(--h2c-surface);
+  border-radius: var(--h2c-radius-xl);
+  box-shadow: var(--h2c-shadow-lg);
+  padding: var(--h2c-space-4);
+}
+.modal-h2c .modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--h2c-space-2);
+  margin-bottom: var(--h2c-space-2);
+}
+.modal-h2c .modal-title { margin: 0; font-size: var(--h2c-h4); font-weight: var(--h2c-weight-bold); color: var(--h2c-text-heading); }
+.modal-h2c .modal-close { background: none; border: none; color: var(--h2c-text-muted); cursor: pointer; padding: 2px; line-height: 1; }
+.modal-h2c .modal-body { color: var(--h2c-text); margin-bottom: var(--h2c-space-4); }
+.modal-h2c .modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--h2c-space-3);
+}

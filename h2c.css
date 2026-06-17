@@ -73,7 +73,7 @@
 
 .btn-success { color: var(--h2c-text-invert); background: var(--h2c-success); border-color: var(--h2c-success); }
 .btn-danger  { color: var(--h2c-text-invert); background: var(--h2c-danger);  border-color: var(--h2c-danger); }
-.btn-warning { color: var(--h2c-text-heading); background: var(--h2c-warning); border-color: var(--h2c-warning); }
+.btn-warning { color: var(--h2c-text-on-accent); background: var(--h2c-warning); border-color: var(--h2c-warning); }
 
 .btn-outline-primary { color: var(--h2c-primary); background: transparent; border-color: var(--h2c-primary); }
 .btn-outline-primary:hover { color: var(--h2c-text-invert); background: var(--h2c-primary); }
@@ -118,7 +118,7 @@
   color: var(--h2c-text-invert);
 }
 .badge-status.is-active    { background: var(--h2c-status-active); }
-.badge-status.is-pending   { background: var(--h2c-status-pending); color: var(--h2c-primary-dark); }
+.badge-status.is-pending   { background: var(--h2c-status-pending); color: var(--h2c-text-on-accent); }
 .badge-status.is-completed { background: var(--h2c-status-completed); }
 .badge-status.is-cancelled { background: var(--h2c-status-cancelled); }
 .badge-status.is-error     { background: var(--h2c-status-error); }

@@ -52,46 +52,66 @@
   --ja-gray-50:  #fafbfc;
 
   /* ====================================================================
-     2. SEMANTIC — role tokens (reference primitives only)
+     2. SEMANTIC — mirrors the Figma "JA Semantic" collection (Light mode),
+        one-to-one. Bootstrap-named + surface aliases for components follow.
      ==================================================================== */
 
-  /* ---- Brand / actions ---- */
-  --h2c-primary:        var(--ja-turquoise);   /* primary buttons, active, links */
-  --h2c-primary-hover:  var(--ja-teal-blue);   /* primary hover/pressed */
-  --h2c-primary-dark:   var(--ja-blue-black);  /* dark button, headings, footer */
-  --h2c-secondary:      var(--ja-aqua);        /* bright accent, highlights */
-  --h2c-accent-mint:    var(--ja-ocean-mint);  /* positive accent */
-  --h2c-accent-blue:    var(--ja-pacific-blue);/* informational accent */
+  /* ---- color / brand ---- */
+  --h2c-primary:        var(--ja-turquoise);    /* brand/primary */
+  --h2c-primary-dark:   var(--ja-blue-black);   /* brand/primary-dark */
+  --h2c-primary-light:  var(--ja-aqua-light);   /* brand/primary-light */
+  --h2c-accent:         var(--ja-yellow);       /* brand/accent */
+  --h2c-accent-light:   var(--ja-yellow-light); /* brand/accent-light */
 
-  /* ---- Feedback ---- */
-  --h2c-info:           var(--ja-turquoise);
-  --h2c-info-surface:   var(--ja-aqua-light);
-  --h2c-success:        var(--ja-forest);
-  --h2c-success-surface:var(--ja-forest-light);
-  --h2c-warning:        var(--ja-yellow);
-  --h2c-warning-surface:var(--ja-yellow-light);
-  --h2c-danger:         var(--ja-red);
-  --h2c-danger-surface: var(--ja-red-light);
+  /* ---- color / status ---- */
+  --h2c-error:          var(--ja-red);          /* status/error */
+  --h2c-error-light:    var(--ja-red-light);    /* status/error-light */
+  --h2c-success:        var(--ja-forest);       /* status/success */
+  --h2c-success-light:  var(--ja-forest-light); /* status/success-light */
 
-  /* ---- Status badges ---- */
-  --h2c-status-active:    var(--ja-turquoise);
-  --h2c-status-pending:   var(--ja-yellow);
-  --h2c-status-completed: var(--ja-forest);
-  --h2c-status-cancelled: var(--ja-gray-600);
-  --h2c-status-error:     var(--ja-red);
+  /* ---- color / text ---- */
+  --h2c-text:           var(--ja-black);     /* text/primary */
+  --h2c-text-muted:     var(--ja-gray-600);  /* text/secondary */
+  --h2c-text-disabled:  var(--ja-gray-300);  /* text/disabled */
+  --h2c-text-invert:    var(--ja-white);     /* text/on-brand */
+  --h2c-text-on-accent: var(--ja-gray-900);  /* text/on-accent */
 
-  /* ---- Text ---- */
-  --h2c-text:        var(--ja-gray-900);   /* body */
-  --h2c-text-heading:var(--ja-blue-black); /* headings */
-  --h2c-text-muted:  var(--ja-gray-600);   /* captions, helper text */
-  --h2c-text-invert: var(--ja-white);
+  /* ---- color / background ---- */
+  --h2c-surface:        var(--ja-white);     /* background/surface */
+  --h2c-surface-page:   var(--ja-gray-100);  /* background/page */
+  --h2c-surface-subtle: var(--ja-gray-50);   /* background/subtle */
 
-  /* ---- Surfaces & lines ---- */
-  --h2c-surface:        var(--ja-white);    /* cards, inputs */
-  --h2c-surface-subtle: var(--ja-gray-100); /* section backgrounds */
-  --h2c-surface-page:   var(--ja-gray-50);  /* app/page background */
-  --h2c-border:         var(--ja-gray-300);
-  --h2c-tint:           var(--ja-aqua-light);/* chips, highlighted rows */
+  /* ---- color / border ---- */
+  --h2c-border:         var(--ja-gray-300);  /* border/default */
+  --h2c-border-subtle:  var(--ja-gray-100);  /* border/subtle */
+  --h2c-border-brand:   var(--ja-aqua);      /* border/brand */
+  --h2c-border-error:   var(--ja-red);       /* border/error */
+
+  /* ====================================================================
+     Component-facing aliases (not in JA Semantic; composed from it).
+     ==================================================================== */
+  --h2c-secondary:      var(--ja-aqua);         /* bright teal accent = border/brand */
+  --h2c-primary-hover:  var(--ja-teal-blue);    /* interaction state */
+  --h2c-accent-mint:    var(--ja-ocean-mint);
+  --h2c-accent-blue:    var(--ja-pacific-blue);
+  --h2c-tint:           var(--h2c-primary-light); /* chips, highlighted rows */
+  --h2c-text-heading:   var(--ja-blue-black);   /* headings → brand/primary-dark */
+
+  /* feedback (Bootstrap-named): info→brand/primary, warning→brand/accent */
+  --h2c-info:            var(--h2c-primary);
+  --h2c-info-surface:    var(--h2c-primary-light);
+  --h2c-success-surface: var(--h2c-success-light);
+  --h2c-warning:         var(--h2c-accent);
+  --h2c-warning-surface: var(--h2c-accent-light);
+  --h2c-danger:          var(--h2c-error);
+  --h2c-danger-surface:  var(--h2c-error-light);
+
+  /* status badges (compose brand/status/text per the Badges & Tags doc) */
+  --h2c-status-active:    var(--h2c-primary);    /* turquoise */
+  --h2c-status-pending:   var(--h2c-accent);     /* yellow */
+  --h2c-status-completed: var(--h2c-success);    /* forest */
+  --h2c-status-cancelled: var(--ja-gray-600);    /* gray-600 */
+  --h2c-status-error:     var(--h2c-error);      /* red */
 
   /* ---- Typography (from Figma "JA Typography") ----
      Display/H1 48·Bold · H2 36·SemiBold · H3 24·SemiBold
@@ -103,8 +123,9 @@
   --h2c-font-size-h3: 1.5rem;           /* 24 */
   --h2c-font-size-body-lg: 1.125rem;    /* 18 */
   --h2c-font-size-base: 1rem;           /* 16 — body */
-  --h2c-font-size-sm: 0.875rem;         /* 14 — helper text */
+  --h2c-font-size-label: 0.875rem;      /* 14 — label */
   --h2c-font-size-caption: 0.75rem;     /* 12 */
+  --h2c-font-size-sm: var(--h2c-font-size-label);
   --h2c-font-size-lg: var(--h2c-font-size-body-lg);
   /* legacy heading aliases (consumed by h2c.css) */
   --h2c-h1: var(--h2c-font-size-h1);
@@ -114,9 +135,10 @@
   --h2c-h5: 1.125rem;
   --h2c-h6: 1rem;
   --h2c-weight-regular: 400;
-  --h2c-weight-medium: 500;
+  --h2c-weight-medium: 500;     /* Caption */
   --h2c-weight-semibold: 600;   /* H2, H3 */
   --h2c-weight-bold: 700;       /* Display / H1 */
+  --h2c-weight-extrabold: 800;
   --h2c-line-height: 1.5;       /* body */
   --h2c-line-height-tight: 1.2; /* headings, caption */
 

@@ -12,7 +12,7 @@ An unofficial design system for the **redesigned** Here to Career web app (Junio
 
 ## Source of truth
 
-The design system is the visual designer's **Figma file** "H2C - JA - Design System" (page *JA - Design System*, frame `ja-design-system`), *not* the old live site's compiled CSS. The file has three variable collections: **JA Primitives**, **JA Semantic** (Light mode), and **JA Typography**. The redesign promoted the old secondary teal to primary:
+The design system is the visual designer's **Figma file** "H2C - JA - Design System" (page *JA - Design System*, frame `ja-design-system`), *not* the old live site's compiled CSS. The file has three variable collections, all now mirrored in `tokens.css`: **JA Primitives** (`--ja-*`), **JA Semantic** (`--h2c-*`, Light mode), and **JA Typography** (`--h2c-font-*`). The redesign promoted the old secondary teal to primary:
 
 - `--h2c-primary` = `--ja-turquoise` (#00A0AF) — primary buttons, links, active state
 - `--h2c-primary-dark` = `--ja-blue-black` (#22404D) — headings, dark button, footer/hero
@@ -24,7 +24,7 @@ Values confirmed directly against the Figma documentation frames:
 - **JA Spacing** — named scale xs .25 / sm .5 / md-sm .75 / md 1 / lg 1.5 / xl 2 / 2xl 3 rem (`--h2c-space-*`).
 - **Buttons** ("CTA Button Base") — pill, 44px tall, states Default (turquoise) / Hover (outline) / Selected (dark), three sizes + icon variant.
 
-The `--ja-*` → `--h2c-*` semantic mapping mirrors how each component is colored in the doc. The one thing **not** yet read verbatim is the **JA Semantic** variable collection itself (it's not drawn as a table; reading it needs Figma edit/Dev Mode access). If you open that collection, reconcile the `--h2c-*` block against its aliases — but the current mapping matches every rendered component in the doc.
+The `--h2c-*` block in `tokens.css` is a verbatim mirror of the **JA Semantic** collection (read from Figma's Variables panel), grouped color/brand · status · text · background · border. Notable exact values: `text/primary` = **black**, `text/on-accent` = gray-900, `background/page` = gray-100, `background/subtle` = gray-50. The collection defines only `error`/`success` (+light) under status; the status-badge colors (active/pending/completed/cancelled) are *composed* from brand/status/text and live under the "Component-facing aliases" block, which also holds the Bootstrap-named feedback aliases (`info`→primary, `warning`→accent, `danger`→error). The one token not in JA Semantic is `--h2c-text-heading` (= brand/primary-dark) — there's no heading text variable, so this is an interpretation matching the rendered headings.
 
 To re-read the Figma file: it's accessible via the Claude-in-Chrome extension. Open the file URL, then in the Layers panel expand `ja-design-system` and use Shift+2 (zoom to selection) on each section layer (`colors`, `typography`, `buttons`, `badges`, …).
 

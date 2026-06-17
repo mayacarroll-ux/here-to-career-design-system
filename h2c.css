@@ -14,17 +14,25 @@
 }
 
 .h2c h1, .h2c h2, .h2c h3, .h2c h4, .h2c h5, .h2c h6 {
-  font-weight: var(--h2c-weight-bold);
   color: var(--h2c-text-heading);
   margin: 0 0 var(--h2c-space-2);
-  line-height: 1.2;
+  line-height: var(--h2c-line-height-tight);
 }
-.h2c h1 { font-size: var(--h2c-h1); }
-.h2c h2 { font-size: var(--h2c-h2); }
-.h2c h3 { font-size: var(--h2c-h3); }
-.h2c h4 { font-size: var(--h2c-h4); }
-.h2c h5 { font-size: var(--h2c-h5); }
-.h2c h6 { font-size: var(--h2c-h6); }
+/* Display/H1 are Bold; H2/H3 are SemiBold (per Figma JA Typography) */
+.h2c h1 { font-size: var(--h2c-h1); font-weight: var(--h2c-weight-bold); }
+.h2c h2 { font-size: var(--h2c-h2); font-weight: var(--h2c-weight-semibold); }
+.h2c h3 { font-size: var(--h2c-h3); font-weight: var(--h2c-weight-semibold); }
+.h2c h4 { font-size: var(--h2c-h4); font-weight: var(--h2c-weight-semibold); }
+.h2c h5 { font-size: var(--h2c-h5); font-weight: var(--h2c-weight-semibold); }
+.h2c h6 { font-size: var(--h2c-h6); font-weight: var(--h2c-weight-semibold); }
+
+/* Body Large & Caption text roles */
+.h2c .text-body-lg { font-size: var(--h2c-font-size-body-lg); }
+.h2c .text-caption {
+  font-size: var(--h2c-font-size-caption);
+  font-weight: var(--h2c-weight-medium);
+  line-height: var(--h2c-line-height-tight);
+}
 
 .h2c a:not(.btn) {
   color: var(--h2c-primary);

@@ -12,13 +12,21 @@ An unofficial design system for the **redesigned** Here to Career web app (Junio
 
 ## Source of truth
 
-The palette now comes from the **Figma "JA Primitives" library** (the visual designer's redesign), *not* the old live site's compiled CSS. The redesign promoted the old secondary teal to primary:
+The design system is the visual designer's **Figma file** "H2C - JA - Design System" (page *JA - Design System*, frame `ja-design-system`), *not* the old live site's compiled CSS. The file has three variable collections: **JA Primitives**, **JA Semantic** (Light mode), and **JA Typography**. The redesign promoted the old secondary teal to primary:
 
 - `--h2c-primary` = `--ja-turquoise` (#00A0AF) — primary buttons, links, active state
 - `--h2c-primary-dark` = `--ja-blue-black` (#22404D) — headings, dark button, footer/hero
-- Status set: active=turquoise, pending=yellow, completed=forest, cancelled=gray-600, error=red
+- Status set (confirmed in the *Badges & Tags* section): active=turquoise, pending=yellow, completed=forest, cancelled=gray-600, error=red
 
-The primitive→semantic mapping in `tokens.css` was **inferred from the Figma component screenshots**, since only the primitive variables were provided. If the Figma file defines its own semantic/alias variables, reconcile the `--h2c-*` block against them — the `--ja-*` primitive values themselves are confirmed exact.
+Values confirmed directly against the Figma documentation frames:
+- **Primitives** — exact hexes, named e.g. Immersive Blue-Black, Empowered Yellow, Leadership Lime, Sustainable Forest. The `colors` section documents primitives only.
+- **JA Typography** — Display/H1 48·Bold, H2 36·SemiBold, H3 24·SemiBold, Body Large 18·Regular, Body 16·Regular, Caption 12·Medium. Encoded in the `--h2c-font-size-*` tokens; note H2/H3 are SemiBold, not Bold.
+- **JA Spacing** — named scale xs .25 / sm .5 / md-sm .75 / md 1 / lg 1.5 / xl 2 / 2xl 3 rem (`--h2c-space-*`).
+- **Buttons** ("CTA Button Base") — pill, 44px tall, states Default (turquoise) / Hover (outline) / Selected (dark), three sizes + icon variant.
+
+The `--ja-*` → `--h2c-*` semantic mapping mirrors how each component is colored in the doc. The one thing **not** yet read verbatim is the **JA Semantic** variable collection itself (it's not drawn as a table; reading it needs Figma edit/Dev Mode access). If you open that collection, reconcile the `--h2c-*` block against its aliases — but the current mapping matches every rendered component in the doc.
+
+To re-read the Figma file: it's accessible via the Claude-in-Chrome extension. Open the file URL, then in the Layers panel expand `ja-design-system` and use Shift+2 (zoom to selection) on each section layer (`colors`, `typography`, `buttons`, `badges`, …).
 
 ## Commands
 

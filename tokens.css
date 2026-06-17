@@ -93,22 +93,32 @@
   --h2c-border:         var(--ja-gray-300);
   --h2c-tint:           var(--ja-aqua-light);/* chips, highlighted rows */
 
-  /* ---- Typography ---- */
+  /* ---- Typography (from Figma "JA Typography") ----
+     Display/H1 48·Bold · H2 36·SemiBold · H3 24·SemiBold
+     Body Large 18·Regular · Body 16·Regular · Caption 12·Medium */
   --h2c-font-family: "Montserrat", "Open Sans", helvetica, arial, sans-serif;
-  --h2c-font-size-base: 1rem;          /* 16px */
-  --h2c-font-size-sm: 0.875rem;
-  --h2c-font-size-lg: 1.25rem;
-  --h2c-h1: 2.5rem;
-  --h2c-h2: 2rem;
-  --h2c-h3: 1.75rem;
-  --h2c-h4: 1.5rem;
-  --h2c-h5: 1.25rem;
+  --h2c-font-size-display: 3rem;        /* 48 */
+  --h2c-font-size-h1: 3rem;             /* 48 */
+  --h2c-font-size-h2: 2.25rem;          /* 36 */
+  --h2c-font-size-h3: 1.5rem;           /* 24 */
+  --h2c-font-size-body-lg: 1.125rem;    /* 18 */
+  --h2c-font-size-base: 1rem;           /* 16 — body */
+  --h2c-font-size-sm: 0.875rem;         /* 14 — helper text */
+  --h2c-font-size-caption: 0.75rem;     /* 12 */
+  --h2c-font-size-lg: var(--h2c-font-size-body-lg);
+  /* legacy heading aliases (consumed by h2c.css) */
+  --h2c-h1: var(--h2c-font-size-h1);
+  --h2c-h2: var(--h2c-font-size-h2);
+  --h2c-h3: var(--h2c-font-size-h3);
+  --h2c-h4: 1.25rem;
+  --h2c-h5: 1.125rem;
   --h2c-h6: 1rem;
   --h2c-weight-regular: 400;
   --h2c-weight-medium: 500;
-  --h2c-weight-semibold: 600;
-  --h2c-weight-bold: 700;
-  --h2c-line-height: 1.5;
+  --h2c-weight-semibold: 600;   /* H2, H3 */
+  --h2c-weight-bold: 700;       /* Display / H1 */
+  --h2c-line-height: 1.5;       /* body */
+  --h2c-line-height-tight: 1.2; /* headings, caption */
 
   /* ---- Shape ---- */
   --h2c-radius-sm: 0.25rem;      /* inputs, small elements */
@@ -122,12 +132,20 @@
   --h2c-shadow-md: 0 4px 12px rgba(34, 64, 77, 0.15);
   --h2c-shadow-lg: 0 10px 30px rgba(34, 64, 77, 0.2);
 
-  /* ---- Spacing (Bootstrap 4 scale) ---- */
-  --h2c-space-1: 0.25rem;
-  --h2c-space-2: 0.5rem;
-  --h2c-space-3: 1rem;
-  --h2c-space-4: 1.5rem;
-  --h2c-space-5: 3rem;
+  /* ---- Spacing (from Figma "JA Spacing" named scale) ---- */
+  --h2c-space-xs:    0.25rem;   /* xs */
+  --h2c-space-sm:    0.5rem;    /* sm */
+  --h2c-space-md-sm: 0.75rem;   /* md-sm */
+  --h2c-space-md:    1rem;      /* md */
+  --h2c-space-lg:    1.5rem;    /* lg */
+  --h2c-space-xl:    2rem;      /* xl */
+  --h2c-space-2xl:   3rem;      /* 2xl */
+  /* legacy numeric aliases (consumed by h2c.css) */
+  --h2c-space-1: var(--h2c-space-xs);
+  --h2c-space-2: var(--h2c-space-sm);
+  --h2c-space-3: var(--h2c-space-md);
+  --h2c-space-4: var(--h2c-space-lg);
+  --h2c-space-5: var(--h2c-space-2xl);
 
   /* ---- Breakpoints (reference only — use in media queries) ----
      sm: 576px | md: 768px | lg: 992px | xl: 1200px */

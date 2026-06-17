@@ -10,12 +10,12 @@
   font-family: var(--h2c-font-family);
   font-size: var(--h2c-font-size-base);
   line-height: var(--h2c-line-height);
-  color: var(--h2c-dark);
+  color: var(--h2c-text);
 }
 
 .h2c h1, .h2c h2, .h2c h3, .h2c h4, .h2c h5, .h2c h6 {
   font-weight: var(--h2c-weight-bold);
-  color: var(--h2c-primary-dark);
+  color: var(--h2c-text-heading);
   margin: 0 0 var(--h2c-space-2);
   line-height: 1.2;
 }
@@ -27,12 +27,14 @@
 .h2c h6 { font-size: var(--h2c-h6); }
 
 .h2c a:not(.btn) {
-  color: var(--h2c-info);
+  color: var(--h2c-primary);
   text-decoration: none;
 }
 .h2c a:not(.btn):hover { text-decoration: underline; }
 
-/* ---- Buttons (pill-shaped, per site convention) ---- */
+/* ==========================================================================
+   Buttons (pill-shaped, per site convention)
+   ========================================================================== */
 .btn {
   display: inline-block;
   font-family: var(--h2c-font-family);
@@ -52,29 +54,89 @@
   outline-offset: 2px;
 }
 
-.btn-primary { color: var(--h2c-white); background: var(--h2c-primary); border-color: var(--h2c-primary); }
-.btn-primary:hover { background: var(--h2c-primary-dark); border-color: var(--h2c-primary-dark); }
+.btn-primary { color: var(--h2c-text-invert); background: var(--h2c-primary); border-color: var(--h2c-primary); }
+.btn-primary:hover { background: var(--h2c-primary-hover); border-color: var(--h2c-primary-hover); }
 
-.btn-secondary { color: var(--h2c-white); background: var(--h2c-secondary); border-color: var(--h2c-secondary); }
-.btn-secondary:hover { filter: brightness(0.9); }
+.btn-secondary { color: var(--h2c-text-invert); background: var(--h2c-secondary); border-color: var(--h2c-secondary); }
+.btn-secondary:hover { filter: brightness(0.93); }
 
-.btn-success { color: var(--h2c-white); background: var(--h2c-success); border-color: var(--h2c-success); }
-.btn-danger  { color: var(--h2c-white); background: var(--h2c-danger);  border-color: var(--h2c-danger); }
-.btn-warning { color: var(--h2c-dark);  background: var(--h2c-warning); border-color: var(--h2c-warning); }
+.btn-dark { color: var(--h2c-text-invert); background: var(--h2c-primary-dark); border-color: var(--h2c-primary-dark); }
+.btn-dark:hover { filter: brightness(1.15); }
+
+.btn-success { color: var(--h2c-text-invert); background: var(--h2c-success); border-color: var(--h2c-success); }
+.btn-danger  { color: var(--h2c-text-invert); background: var(--h2c-danger);  border-color: var(--h2c-danger); }
+.btn-warning { color: var(--h2c-text-heading); background: var(--h2c-warning); border-color: var(--h2c-warning); }
 
 .btn-outline-primary { color: var(--h2c-primary); background: transparent; border-color: var(--h2c-primary); }
-.btn-outline-primary:hover { color: var(--h2c-white); background: var(--h2c-primary); }
+.btn-outline-primary:hover { color: var(--h2c-text-invert); background: var(--h2c-primary); }
 
-.btn-link { color: var(--h2c-info); background: transparent; border-color: transparent; }
+.btn-link { color: var(--h2c-primary); background: transparent; border-color: transparent; }
 .btn-link:hover { text-decoration: underline; }
 
 .btn-sm { padding: 6px 16px; font-size: var(--h2c-font-size-sm); }
 .btn-lg { padding: 14px 32px; font-size: var(--h2c-font-size-lg); }
-.btn:disabled, .btn.disabled { opacity: .55; cursor: not-allowed; }
+.btn:disabled, .btn.disabled {
+  background: var(--h2c-surface-subtle);
+  border-color: var(--h2c-surface-subtle);
+  color: var(--h2c-text-muted);
+  cursor: not-allowed;
+}
 
-/* ---- Cards ---- */
+/* ==========================================================================
+   Badges, status badges & chips (all pill-shaped)
+   ========================================================================== */
+.badge {
+  display: inline-block;
+  padding: .35em .8em;
+  font-size: .75em;
+  font-weight: var(--h2c-weight-semibold);
+  border-radius: var(--h2c-radius-pill);
+}
+.badge-primary   { background: var(--h2c-primary);   color: var(--h2c-text-invert); }
+.badge-secondary { background: var(--h2c-secondary); color: var(--h2c-text-invert); }
+.badge-success   { background: var(--h2c-success);   color: var(--h2c-text-invert); }
+.badge-danger    { background: var(--h2c-danger);    color: var(--h2c-text-invert); }
+.badge-tint      { background: var(--h2c-tint);      color: var(--h2c-primary-dark); }
+
+/* Status badges — uppercase pill, per Figma status set */
+.badge-status {
+  display: inline-block;
+  padding: .3em .9em;
+  font-size: .7rem;
+  font-weight: var(--h2c-weight-bold);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  border-radius: var(--h2c-radius-pill);
+  color: var(--h2c-text-invert);
+}
+.badge-status.is-active    { background: var(--h2c-status-active); }
+.badge-status.is-pending   { background: var(--h2c-status-pending); color: var(--h2c-primary-dark); }
+.badge-status.is-completed { background: var(--h2c-status-completed); }
+.badge-status.is-cancelled { background: var(--h2c-status-cancelled); }
+.badge-status.is-error     { background: var(--h2c-status-error); }
+
+/* Chips — outline (filters/grades) and filled (categories) */
+.chip {
+  display: inline-block;
+  padding: .25em .85em;
+  font-size: var(--h2c-font-size-sm);
+  border: 1px solid var(--h2c-border);
+  border-radius: var(--h2c-radius-pill);
+  color: var(--h2c-text);
+  background: var(--h2c-surface);
+}
+.chip-filled {
+  border-color: transparent;
+  background: var(--h2c-tint);
+  color: var(--h2c-primary-dark);
+}
+.chip.is-selected { border-color: var(--h2c-primary); color: var(--h2c-primary); }
+
+/* ==========================================================================
+   Cards
+   ========================================================================== */
 .card {
-  background: var(--h2c-white);
+  background: var(--h2c-surface);
   border: 1px solid var(--h2c-border);
   border-radius: var(--h2c-radius-lg);
   box-shadow: var(--h2c-shadow-sm);
@@ -83,13 +145,13 @@
 .card-header {
   padding: var(--h2c-space-3);
   background: var(--h2c-primary);
-  color: var(--h2c-white);
+  color: var(--h2c-text-invert);
   font-weight: var(--h2c-weight-semibold);
 }
 .card-body { padding: var(--h2c-space-3); }
 .card-footer {
   padding: var(--h2c-space-2) var(--h2c-space-3);
-  background: var(--h2c-surface);
+  background: var(--h2c-surface-subtle);
   border-top: 1px solid var(--h2c-border);
 }
 .card-feature {
@@ -98,39 +160,73 @@
   box-shadow: var(--h2c-shadow-md);
 }
 
-/* ---- Badges / chips ---- */
-.badge {
-  display: inline-block;
-  padding: .35em .8em;
-  font-size: .75em;
-  font-weight: var(--h2c-weight-semibold);
-  border-radius: var(--h2c-radius-pill);
+/* Program card — top accent bar + icon tile */
+.program-card .program-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px;
+  border-radius: var(--h2c-radius-sm);
+  background: var(--h2c-primary);
+  color: var(--h2c-text-invert);
 }
-.badge-primary   { background: var(--h2c-primary); color: var(--h2c-white); }
-.badge-secondary { background: var(--h2c-secondary); color: var(--h2c-white); }
-.badge-success   { background: var(--h2c-success); color: var(--h2c-white); }
-.badge-danger    { background: var(--h2c-danger); color: var(--h2c-white); }
-.badge-teal      { background: var(--h2c-teal-tint); color: var(--h2c-primary-dark); }
 
-/* ---- Alerts ---- */
+/* Stat card — big number + delta */
+.stat-card {
+  background: var(--h2c-surface);
+  border: 1px solid var(--h2c-border);
+  border-radius: var(--h2c-radius-lg);
+  padding: var(--h2c-space-3) var(--h2c-space-4);
+}
+.stat-card .stat-value {
+  font-size: 2rem; font-weight: var(--h2c-weight-bold);
+  color: var(--h2c-text-heading); line-height: 1;
+}
+.stat-card .stat-label {
+  font-size: .7rem; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--h2c-text-muted); margin-top: var(--h2c-space-1);
+}
+.stat-card .stat-delta { color: var(--h2c-success); font-size: var(--h2c-font-size-sm); font-weight: var(--h2c-weight-semibold); }
+.stat-card .stat-delta.is-down { color: var(--h2c-danger); }
+
+/* Career card — pale-yellow highlighted variant in Figma */
+.career-card.is-highlight { background: var(--h2c-warning-surface); border-color: transparent; }
+
+/* ==========================================================================
+   Avatars
+   ========================================================================== */
+.avatar {
+  display: inline-block;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--h2c-primary);
+  object-fit: cover;
+  background: var(--h2c-surface-subtle);
+}
+.avatar-sm { width: 32px; height: 32px; }
+.avatar-lg { width: 64px; height: 64px; }
+
+/* ==========================================================================
+   Alerts
+   ========================================================================== */
 .alert {
   padding: var(--h2c-space-3);
   border: 1px solid transparent;
   border-radius: var(--h2c-radius-md);
   margin-bottom: var(--h2c-space-3);
 }
-.alert-info    { background: var(--h2c-teal-tint); color: var(--h2c-primary-dark); border-color: var(--h2c-secondary); }
-.alert-success { background: #e6f4ea; color: #0b5723; border-color: var(--h2c-success); }
-.alert-warning { background: var(--h2c-warning); color: var(--h2c-gray-dark); border-color: #d8d68a; }
-.alert-danger  { background: #fbeaea; color: #8c2f2f; border-color: var(--h2c-danger); }
+.alert-info    { background: var(--h2c-info-surface);    color: var(--h2c-primary-dark); border-color: var(--h2c-info); }
+.alert-success { background: var(--h2c-success-surface); color: var(--h2c-success);      border-color: var(--h2c-success); }
+.alert-warning { background: var(--h2c-warning-surface); color: var(--h2c-text-heading); border-color: var(--h2c-warning); }
+.alert-danger  { background: var(--h2c-danger-surface);  color: var(--h2c-danger);       border-color: var(--h2c-danger); }
 
-/* ---- Forms ---- */
+/* ==========================================================================
+   Forms — inputs keep the small radius (NOT pills)
+   ========================================================================== */
 .form-group { margin-bottom: var(--h2c-space-3); }
 .form-label {
   display: block;
   margin-bottom: var(--h2c-space-1);
   font-weight: var(--h2c-weight-semibold);
-  color: var(--h2c-primary-dark);
+  color: var(--h2c-text-heading);
 }
 .form-control {
   display: block;
@@ -139,27 +235,97 @@
   padding: 10px 14px;
   font-family: var(--h2c-font-family);
   font-size: var(--h2c-font-size-base);
-  color: var(--h2c-dark);
-  background: var(--h2c-white);
-  border: 1px solid var(--h2c-gray-light);
+  color: var(--h2c-text);
+  background: var(--h2c-surface);
+  border: 1px solid var(--h2c-border);
   border-radius: var(--h2c-radius-sm);
   transition: border-color .15s ease, box-shadow .15s ease;
 }
 .form-control:focus {
-  border-color: var(--h2c-secondary);
+  border-color: var(--h2c-primary);
   outline: 0;
-  box-shadow: 0 0 0 3px rgba(0, 160, 175, .25);
+  box-shadow: 0 0 0 3px var(--h2c-info-surface);
 }
 .form-control.is-invalid { border-color: var(--h2c-danger); }
+.form-control.is-valid   { border-color: var(--h2c-primary); }
 .form-text-invalid { color: var(--h2c-danger); font-size: var(--h2c-font-size-sm); }
 
-/* ---- Navbar ---- */
+/* Checkbox & radio (accent-color tint) */
+.form-check-input { accent-color: var(--h2c-primary); width: 1.1em; height: 1.1em; }
+
+/* Toggle switch */
+.switch { position: relative; display: inline-block; width: 44px; height: 24px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.switch .track {
+  position: absolute; inset: 0; cursor: pointer;
+  background: var(--h2c-gray-300, #d1d5db);
+  border-radius: var(--h2c-radius-pill);
+  transition: background .15s ease;
+}
+.switch .track::before {
+  content: ""; position: absolute; height: 18px; width: 18px; left: 3px; top: 3px;
+  background: var(--h2c-white); border-radius: 50%;
+  transition: transform .15s ease;
+}
+.switch input:checked + .track { background: var(--h2c-primary); }
+.switch input:checked + .track::before { transform: translateX(20px); }
+
+/* Range slider */
+.slider {
+  -webkit-appearance: none; appearance: none;
+  width: 200px; height: 4px; border-radius: var(--h2c-radius-pill);
+  background: var(--h2c-border); outline: none;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--h2c-primary); cursor: pointer;
+}
+.slider::-moz-range-thumb {
+  width: 16px; height: 16px; border: none; border-radius: 50%;
+  background: var(--h2c-primary); cursor: pointer;
+}
+
+/* ==========================================================================
+   Dropdown / select menu
+   ========================================================================== */
+.dropdown-menu-h2c {
+  background: var(--h2c-surface);
+  border: 1px solid var(--h2c-border);
+  border-radius: var(--h2c-radius-md);
+  box-shadow: var(--h2c-shadow-md);
+  padding: var(--h2c-space-1) 0;
+  min-width: 200px;
+}
+.dropdown-menu-h2c .dropdown-item {
+  display: block; padding: 10px 16px;
+  color: var(--h2c-text); text-decoration: none; cursor: pointer;
+}
+.dropdown-menu-h2c .dropdown-item:hover { background: var(--h2c-surface-subtle); }
+.dropdown-menu-h2c .dropdown-item.is-selected { background: var(--h2c-tint); color: var(--h2c-primary-dark); }
+
+/* ==========================================================================
+   Data table
+   ========================================================================== */
+.table-h2c { width: 100%; border-collapse: collapse; font-size: var(--h2c-font-size-sm); }
+.table-h2c th {
+  text-align: left; padding: 10px 14px;
+  color: var(--h2c-text-muted); font-weight: var(--h2c-weight-semibold);
+  border-bottom: 1px solid var(--h2c-border);
+}
+.table-h2c td { padding: 12px 14px; border-bottom: 1px solid var(--h2c-border); }
+.table-h2c tbody tr:nth-child(even) { background: var(--h2c-surface-subtle); }
+.table-h2c .row-action { color: var(--h2c-primary); cursor: pointer; background: none; border: none; padding: 4px; }
+
+/* ==========================================================================
+   Navbar
+   ========================================================================== */
 .navbar-h2c {
   display: flex;
   align-items: center;
   gap: var(--h2c-space-4);
   padding: var(--h2c-space-2) var(--h2c-space-3);
-  background: var(--h2c-white);
+  background: var(--h2c-surface);
   border-bottom: 1px solid var(--h2c-border);
   font-family: var(--h2c-font-family);
 }
@@ -170,19 +336,21 @@
   text-decoration: none;
 }
 .navbar-h2c .nav-link {
-  color: var(--h2c-gray-dark);
+  color: var(--h2c-text);
   font-weight: var(--h2c-weight-medium);
   text-decoration: none;
 }
 .navbar-h2c .nav-link:hover,
 .navbar-h2c .nav-link.active { color: var(--h2c-primary); }
 
-/* ---- Hero ---- */
+/* ==========================================================================
+   Hero
+   ========================================================================== */
 .hero-h2c {
   background: linear-gradient(135deg, var(--h2c-primary-dark), var(--h2c-primary));
-  color: var(--h2c-white);
+  color: var(--h2c-text-invert);
   padding: var(--h2c-space-5) var(--h2c-space-4);
   border-radius: var(--h2c-radius-xl);
 }
-.hero-h2c h1, .hero-h2c h2 { color: var(--h2c-white); }
+.hero-h2c h1, .hero-h2c h2 { color: var(--h2c-text-invert); }
 .hero-h2c p { opacity: .9; max-width: 60ch; }

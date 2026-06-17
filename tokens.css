@@ -1,31 +1,97 @@
 /* ==========================================================================
    Here to Career — Design Tokens
-   Extracted from the compiled theme at career.ja.org (Bootstrap 4 base).
-   Import this file alone to theme any project with the H2C brand.
+   --------------------------------------------------------------------------
+   Two layers:
+     1. PRIMITIVES (--ja-*) — the raw "JA Primitives" palette, copied verbatim
+        from the Figma variables. These are facts; do not edit the hex values.
+     2. SEMANTIC (--h2c-*) — role tokens that REFERENCE primitives. Components
+        consume only these. The primitive→role mapping below was inferred from
+        the Figma component sheet; if the Figma file defines its own semantic
+        alias variables, reconcile against those.
    ========================================================================== */
 
 :root {
-  /* ---- Brand color ---- */
-  --h2c-primary: #285f74;        /* deep teal — primary actions, headings */
-  --h2c-primary-dark: #23404d;   /* dark slate teal — hovers, footer, hero */
-  --h2c-secondary: #00a0af;      /* bright teal — secondary actions, accents */
-  --h2c-info: #0081ca;           /* JA blue — links, informational */
-  --h2c-success: #009424;        /* green — success states */
-  --h2c-warning: #f3f2b3;        /* pale yellow — warning surfaces (dark text) */
-  --h2c-danger: #e47272;         /* soft red — errors, destructive actions */
+  /* ====================================================================
+     1. PRIMITIVES — JA Primitives (exact, from Figma)
+     ==================================================================== */
 
-  /* ---- Neutrals ---- */
-  --h2c-dark: #232628;
-  --h2c-gray-dark: #414245;
-  --h2c-gray: #626366;
-  --h2c-gray-light: #a6a6a6;
-  --h2c-border: #e5e7ea;
-  --h2c-surface: #f8f9fa;
-  --h2c-white: #ffffff;
+  /* base */
+  --ja-white: #ffffff;
+  --ja-black: #000000;
 
-  /* ---- Tints ---- */
-  --h2c-teal-tint: #c3edef;      /* light teal — highlighted surfaces, chips */
-  --h2c-primary-tint: #e9eff2;   /* light primary wash — section backgrounds */
+  /* primary */
+  --ja-blue-black:   #22404d;
+  --ja-forest-slate: #224e45;
+  --ja-midnight-ink: #222b4e;
+  --ja-steel-slate:  #507686;
+
+  /* secondary */
+  --ja-aqua:        #00c0ca;
+  --ja-aqua-light:  #d9f7f9;
+  --ja-turquoise:   #00a0af;
+  --ja-teal-blue:   #008b9c;
+  --ja-boundless:   #425f74;
+  --ja-ocean-mint:  #00bf8e;
+  --ja-pacific-blue:#0085c7;
+  --ja-deep-harbor: #1b4f72;
+
+  /* accent */
+  --ja-yellow:        #e3e24f;
+  --ja-yellow-light:  #f9f9da;
+  --ja-red:           #eb4e07;
+  --ja-red-light:     #fde3d4;
+  --ja-forest:        #007651;
+  --ja-forest-light:  #d5eee5;
+  --ja-lime:          #8fc440;
+
+  /* gray ramp */
+  --ja-gray-900: #1a1a1a;
+  --ja-gray-600: #8c8c8c;
+  --ja-gray-300: #d1d5db;
+  --ja-gray-100: #f5f6f8;
+  --ja-gray-50:  #fafbfc;
+
+  /* ====================================================================
+     2. SEMANTIC — role tokens (reference primitives only)
+     ==================================================================== */
+
+  /* ---- Brand / actions ---- */
+  --h2c-primary:        var(--ja-turquoise);   /* primary buttons, active, links */
+  --h2c-primary-hover:  var(--ja-teal-blue);   /* primary hover/pressed */
+  --h2c-primary-dark:   var(--ja-blue-black);  /* dark button, headings, footer */
+  --h2c-secondary:      var(--ja-aqua);        /* bright accent, highlights */
+  --h2c-accent-mint:    var(--ja-ocean-mint);  /* positive accent */
+  --h2c-accent-blue:    var(--ja-pacific-blue);/* informational accent */
+
+  /* ---- Feedback ---- */
+  --h2c-info:           var(--ja-turquoise);
+  --h2c-info-surface:   var(--ja-aqua-light);
+  --h2c-success:        var(--ja-forest);
+  --h2c-success-surface:var(--ja-forest-light);
+  --h2c-warning:        var(--ja-yellow);
+  --h2c-warning-surface:var(--ja-yellow-light);
+  --h2c-danger:         var(--ja-red);
+  --h2c-danger-surface: var(--ja-red-light);
+
+  /* ---- Status badges ---- */
+  --h2c-status-active:    var(--ja-turquoise);
+  --h2c-status-pending:   var(--ja-yellow);
+  --h2c-status-completed: var(--ja-forest);
+  --h2c-status-cancelled: var(--ja-gray-600);
+  --h2c-status-error:     var(--ja-red);
+
+  /* ---- Text ---- */
+  --h2c-text:        var(--ja-gray-900);   /* body */
+  --h2c-text-heading:var(--ja-blue-black); /* headings */
+  --h2c-text-muted:  var(--ja-gray-600);   /* captions, helper text */
+  --h2c-text-invert: var(--ja-white);
+
+  /* ---- Surfaces & lines ---- */
+  --h2c-surface:        var(--ja-white);    /* cards, inputs */
+  --h2c-surface-subtle: var(--ja-gray-100); /* section backgrounds */
+  --h2c-surface-page:   var(--ja-gray-50);  /* app/page background */
+  --h2c-border:         var(--ja-gray-300);
+  --h2c-tint:           var(--ja-aqua-light);/* chips, highlighted rows */
 
   /* ---- Typography ---- */
   --h2c-font-family: "Montserrat", "Open Sans", helvetica, arial, sans-serif;
@@ -49,12 +115,12 @@
   --h2c-radius-md: 6px;          /* dropdowns, popovers */
   --h2c-radius-lg: 10px;         /* cards */
   --h2c-radius-xl: 1rem;         /* feature panels */
-  --h2c-radius-pill: 100px;      /* buttons, chips */
+  --h2c-radius-pill: 100px;      /* buttons, badges, chips */
 
-  /* ---- Elevation ---- */
-  --h2c-shadow-sm: 0 1px 3px rgba(35, 64, 77, 0.12);
-  --h2c-shadow-md: 0 4px 12px rgba(35, 64, 77, 0.15);
-  --h2c-shadow-lg: 0 10px 30px rgba(35, 64, 77, 0.2);
+  /* ---- Elevation (blue-black tinted, never pure black) ---- */
+  --h2c-shadow-sm: 0 1px 3px rgba(34, 64, 77, 0.12);
+  --h2c-shadow-md: 0 4px 12px rgba(34, 64, 77, 0.15);
+  --h2c-shadow-lg: 0 10px 30px rgba(34, 64, 77, 0.2);
 
   /* ---- Spacing (Bootstrap 4 scale) ---- */
   --h2c-space-1: 0.25rem;

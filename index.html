@@ -9,6 +9,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="tokens.css">
 <link rel="stylesheet" href="h2c.css">
+<!-- Lottie player (CDN web component) — the only JS in the system, scoped to animated icons -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.8/dist/lottie-player.js"></script>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -78,6 +80,14 @@
     display: flex; align-items: center; justify-content: center; font-size: .75rem; color: var(--h2c-text-muted);
   }
 
+  /* Animated icon grid */
+  .icon-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 18px; }
+  .icon-grid figure { margin: 0; text-align: center; background: var(--h2c-surface-dark-raised); border-radius: var(--h2c-radius-lg); padding: 14px 8px 10px; }
+  .icon-grid lottie-player { width: 84px; height: 84px; margin: 0 auto; }
+  .icon-grid figcaption { color: var(--h2c-text-on-dark); font-size: .72rem; font-weight: 600; margin-top: 6px; }
+  .icon-grid figure.needs-fix { outline: 1px dashed var(--h2c-warning); }
+  .icon-grid figcaption span { color: var(--h2c-warning); cursor: help; }
+
   footer { color: var(--h2c-text-muted); font-size: .8rem; padding: 24px 0 8px; border-top: 1px solid var(--h2c-border); }
 
   @media (max-width: 820px) {
@@ -97,6 +107,7 @@
     <a href="#hierarchy">Color Hierarchy</a>
     <a href="#typography">Typography</a>
     <a href="#shape">Shape &amp; Elevation</a>
+    <a href="#icons">Animated Icons</a>
     <div class="group">Components</div>
     <a href="#buttons">Buttons</a>
     <a href="#badges">Badges &amp; Status</a>
@@ -262,6 +273,34 @@
           <div class="tile" style="border:none;box-shadow:var(--h2c-shadow-lg)">shadow-lg</div>
         </div>
       </div>
+    </section>
+
+    <section id="icons">
+      <h2>Animated Icons</h2>
+      <p class="lede">One illustrated, full-color Lottie icon per career cluster. They loop a subtle "breathing" pulse and bring the color — shown here on a dark surface, the color-hierarchy pattern in action. Played via the LottieFiles web component (the only JS in the system).</p>
+      <div class="demo" style="background:var(--h2c-surface-dark);padding:28px">
+        <div class="icon-grid">
+          <figure><lottie-player src="assets/icons/advanced-manufacturing.json" background="transparent" speed="1" loop autoplay></lottie-player><figcaption>Advanced Manufacturing</figcaption></figure>
+          <figure><lottie-player src="assets/icons/arts-entertainment-design.json" background="transparent" speed="1" loop autoplay></lottie-player><figcaption>Arts, Entertainment &amp; Design</figcaption></figure>
+          <figure><lottie-player src="assets/icons/construction.json" background="transparent" speed="1" loop autoplay></lottie-player><figcaption>Construction</figcaption></figure>
+          <figure><lottie-player src="assets/icons/digital-technology.json" background="transparent" speed="1" loop autoplay></lottie-player><figcaption>Digital Technology</figcaption></figure>
+          <figure><lottie-player src="assets/icons/education.json" background="transparent" speed="1" loop autoplay></lottie-player><figcaption>Education</figcaption></figure>
+          <figure><lottie-player src="assets/icons/energy-natural-resources.json" background="transparent" speed="1" loop autoplay></lottie-player><figcaption>Energy &amp; Natural Resources</figcaption></figure>
+          <figure><lottie-player src="assets/icons/financial-services.json" background="transparent" speed="1" loop autoplay></lottie-player><figcaption>Financial Services</figcaption></figure>
+          <figure><lottie-player src="assets/icons/healthcare-human-services.json" background="transparent" speed="1" loop autoplay></lottie-player><figcaption>Healthcare &amp; Human Services</figcaption></figure>
+          <figure><lottie-player src="assets/icons/hospitality-events-tourism.json" background="transparent" speed="1" loop autoplay></lottie-player><figcaption>Hospitality, Events &amp; Tourism</figcaption></figure>
+          <figure><lottie-player src="assets/icons/management-entrepreneurship.json" background="transparent" speed="1" loop autoplay></lottie-player><figcaption>Management &amp; Entrepreneurship</figcaption></figure>
+          <figure><lottie-player src="assets/icons/marketing-sales.json" background="transparent" speed="1" loop autoplay></lottie-player><figcaption>Marketing &amp; Sales</figcaption></figure>
+          <figure><lottie-player src="assets/icons/public-service-safety.json" background="transparent" speed="1" loop autoplay></lottie-player><figcaption>Public Service &amp; Safety</figcaption></figure>
+          <figure><lottie-player src="assets/icons/supply-chain-transportation.json" background="transparent" speed="1" loop autoplay></lottie-player><figcaption>Supply Chain &amp; Transportation</figcaption></figure>
+          <figure class="needs-fix"><lottie-player src="assets/icons/agriculture.json" background="transparent" speed="1" loop autoplay></lottie-player><figcaption>Agriculture <span title="Source file currently contains the Advanced Manufacturing icon — awaiting re-export">⚠</span></figcaption></figure>
+        </div>
+      </div>
+<pre class="code">&lt;script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.8/dist/lottie-player.js"&gt;&lt;/script&gt;
+
+&lt;lottie-player src="assets/icons/construction.json"
+  background="transparent" speed="1" loop autoplay&gt;&lt;/lottie-player&gt;</pre>
+      <p class="lede" style="font-size:var(--h2c-font-size-sm)"><b>Note:</b> <code>agriculture.json</code> currently holds the Advanced Manufacturing artwork (flagged ⚠). Drop in a corrected export at the same path and it updates everywhere automatically.</p>
     </section>
 
     <section id="buttons">

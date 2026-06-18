@@ -45,6 +45,7 @@ No build, lint, or test tooling exists (and node/npm are not installed on this m
 - Shadows are blue-black-tinted (`rgba(34, 64, 77, …)`), never pure black.
 - Base typography in `h2c.css` is scoped under the `.h2c` class (set on `<body>`) so the stylesheet can coexist with other CSS.
 - Deployment is static-host drag-and-drop; nothing may introduce a build step.
+- **Animated icons**: one Lottie per career cluster in `assets/icons/*.json` (colorful raster art with a looping "breathe" pulse — they provide color, per the hierarchy direction). Imported from the designer's exports, cleaned to a single referenced asset each (unused embedded images stripped). Played with the LottieFiles `<lottie-player>` web component loaded from CDN — this is the **only JS** in the system, a deliberate scoped exception (no build, no npm). Known issue: `agriculture.json` currently contains the Advanced Manufacturing artwork (flagged ⚠ in the docs) — replace at the same path when the designer re-exports.
 
 ## Deployment
 

@@ -94,6 +94,7 @@
     <div class="logo">Here to Career<br><span>Design System</span></div>
     <div class="group">Foundations</div>
     <a href="#colors">Color</a>
+    <a href="#hierarchy">Color Hierarchy</a>
     <a href="#typography">Typography</a>
     <a href="#shape">Shape &amp; Elevation</a>
     <div class="group">Components</div>
@@ -189,6 +190,46 @@
           <tr><td>color/border/default</td><td>gray/300</td><td><span class="chip-color" style="display:inline-block;width:60px;height:18px;border-radius:4px;background:var(--h2c-border)"></span></td></tr>
         </tbody>
       </table>
+    </section>
+
+    <section id="hierarchy">
+      <h2>Color Hierarchy</h2>
+      <p class="lede">Lean into depth: <b>darker surfaces recede to the background, lighter surfaces come forward</b>, and color enters mainly through photography, illustration, and Lottie — not flat fills. Brand teals stay as accents on top.</p>
+
+      <div class="demo" style="background:var(--h2c-surface-dark);padding:32px">
+        <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:stretch">
+          <div style="flex:1;min-width:200px;background:var(--h2c-surface-dark-raised);border-radius:var(--h2c-radius-lg);padding:20px;color:var(--h2c-text-on-dark)">
+            <div style="font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--h2c-text-on-dark-muted);margin-bottom:6px">Raised on dark</div>
+            <div style="font-weight:700">Background layer</div>
+            <p style="margin:8px 0 0;color:var(--h2c-text-on-dark-muted);font-size:.875rem">surface-dark → surface-dark-raised</p>
+          </div>
+          <div class="card" style="flex:1;min-width:200px;margin:0">
+            <div class="card-body">
+              <div style="font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--h2c-text-muted);margin-bottom:6px">Foreground</div>
+              <div style="font-weight:700;color:var(--h2c-text-heading)">Light card forward</div>
+              <p style="margin:8px 0 0;color:var(--h2c-text-muted);font-size:.875rem">White surface lifts off the dark background.</p>
+            </div>
+          </div>
+          <div style="flex:1;min-width:200px;border-radius:var(--h2c-radius-lg);overflow:hidden;background:linear-gradient(135deg,var(--h2c-burst-blue),var(--h2c-burst-mint));min-height:120px;display:flex;align-items:flex-end;padding:16px;color:#fff;font-weight:700">Color burst (imagery/Lottie)</div>
+        </div>
+      </div>
+
+      <div class="palette-group">Dark surface ramp</div>
+      <div class="swatches">
+        <div class="swatch"><div class="chip-color" style="background:var(--h2c-surface-dark)"></div><div class="meta"><b>surface-dark</b><code>blue-black</code></div></div>
+        <div class="swatch"><div class="chip-color" style="background:var(--h2c-surface-dark-alt)"></div><div class="meta"><b>surface-dark-alt</b><code>midnight-ink</code></div></div>
+        <div class="swatch"><div class="chip-color" style="background:var(--h2c-surface-dark-raised)"></div><div class="meta"><b>surface-dark-raised</b><code>boundless</code></div></div>
+        <div class="swatch"><div class="chip-color" style="background:var(--h2c-border-on-dark)"></div><div class="meta"><b>border-on-dark</b><code>steel-slate</code></div></div>
+      </div>
+
+      <div class="palette-group">Color-burst accents (imagery / Lottie / data-viz — not UI chrome)</div>
+      <div class="swatches">
+        <div class="swatch"><div class="chip-color" style="background:var(--h2c-burst-mint)"></div><div class="meta"><b>burst-mint</b><code>ocean-mint</code></div></div>
+        <div class="swatch"><div class="chip-color" style="background:var(--h2c-burst-blue)"></div><div class="meta"><b>burst-blue</b><code>pacific-blue</code></div></div>
+        <div class="swatch"><div class="chip-color" style="background:var(--h2c-burst-harbor)"></div><div class="meta"><b>burst-harbor</b><code>deep-harbor</code></div></div>
+        <div class="swatch"><div class="chip-color" style="background:var(--h2c-burst-lime)"></div><div class="meta"><b>burst-lime</b><code>lime</code></div></div>
+        <div class="swatch"><div class="chip-color" style="background:var(--h2c-burst-yellow)"></div><div class="meta"><b>burst-yellow</b><code>yellow</code></div></div>
+      </div>
     </section>
 
     <section id="typography">

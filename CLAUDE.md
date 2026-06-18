@@ -38,7 +38,8 @@ No build, lint, or test tooling exists (and node/npm are not installed on this m
 
 ## Conventions
 
-- Primitive hex values are facts from Figma — don't "improve" them. Express every design decision as a *semantic* token referencing a primitive.
+- Primitive hex values are facts from Figma — don't "improve" them, and don't invent new ones in code; genuinely new color *ideas* belong in the Figma file (the designer's `JA Primitives` frame), not as new `--ja-*` tokens here.
+- **Color hierarchy** (designer direction): darker surfaces recede (background), lighter surfaces come forward (foreground), and color comes mostly from photography/illustration/Lottie rather than flat fills. The `--h2c-surface-dark*` ramp (blue-black → midnight-ink → boundless) and the `--h2c-burst-*` accents (ocean-mint, pacific-blue, deep-harbor, lime, yellow) support this — burst tokens are for imagery/data-viz "pops", never UI chrome.
 - Shape language: pill radius (100px) on buttons/badges/chips, 10px on cards, .25rem on inputs. Inputs are deliberately *not* pills.
 - Headings: Montserrat bold (700) in `--h2c-text-heading`. Body: regular (400) in `--h2c-text`.
 - Shadows are blue-black-tinted (`rgba(34, 64, 77, …)`), never pure black.

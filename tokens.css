@@ -113,6 +113,28 @@
   --h2c-status-cancelled: var(--ja-gray-600);    /* gray-600 */
   --h2c-status-error:     var(--h2c-error);      /* red */
 
+  /* ====================================================================
+     COLOR HIERARCHY (per designer direction): darker surfaces in the
+     background, lighter surfaces in the foreground, color from imagery.
+     All composed from existing primitives — no new hexes.
+     ==================================================================== */
+
+  /* Dark surface ramp — deepest → raised. Stack lighter content on top. */
+  --h2c-surface-dark:        var(--ja-blue-black);   /* deepest bg (page/hero/footer) */
+  --h2c-surface-dark-alt:    var(--ja-midnight-ink); /* alt deep bg */
+  --h2c-surface-dark-raised: var(--ja-boundless);    /* raised panel on a dark bg */
+  --h2c-border-on-dark:      var(--ja-steel-slate);  /* hairlines on dark */
+  --h2c-text-on-dark:        var(--ja-white);
+  --h2c-text-on-dark-muted:  rgba(255, 255, 255, .72);
+
+  /* Color-burst accents — for photography/illustration/Lottie and data-viz,
+     i.e. foreground "pops", NOT UI chrome. Use sparingly against dark/neutral. */
+  --h2c-burst-mint:   var(--ja-ocean-mint);
+  --h2c-burst-blue:   var(--ja-pacific-blue);
+  --h2c-burst-harbor: var(--ja-deep-harbor);
+  --h2c-burst-lime:   var(--ja-lime);
+  --h2c-burst-yellow: var(--ja-yellow);
+
   /* ---- Typography (from Figma "JA Typography") ----
      Display/H1 48·Bold · H2 36·SemiBold · H3 24·SemiBold
      Body Large 18·Regular · Body 16·Regular · Caption 12·Medium */

@@ -87,6 +87,11 @@
   .icon-grid figcaption { color: var(--h2c-text-on-dark); font-size: .72rem; font-weight: 600; margin-top: 6px; }
   .icon-grid figure.needs-fix { outline: 1px dashed var(--h2c-warning); }
   .icon-grid figcaption span { color: var(--h2c-warning); cursor: help; }
+  /* static (light) variant */
+  .icon-grid-static figure { background: var(--h2c-surface-subtle); border: 1px solid var(--h2c-border); }
+  .icon-grid-static img { width: 64px; height: 64px; display: block; margin: 0 auto; object-fit: contain; }
+  .icon-grid-static figcaption { color: var(--h2c-text-heading); }
+  .icon-grid-static figure.needs-fix { outline: 1px dashed var(--h2c-warning); }
 
   footer { color: var(--h2c-text-muted); font-size: .8rem; padding: 24px 0 8px; border-top: 1px solid var(--h2c-border); }
 
@@ -300,7 +305,29 @@
 
 &lt;lottie-player src="assets/icons/construction.json"
   background="transparent" speed="1" loop autoplay&gt;&lt;/lottie-player&gt;</pre>
-      <p class="lede" style="font-size:var(--h2c-font-size-sm)"><b>Note:</b> <code>agriculture.json</code> currently holds the Advanced Manufacturing artwork (flagged ⚠). Drop in a corrected export at the same path and it updates everywhere automatically.</p>
+
+      <h3 style="font-size:var(--h2c-h5);margin:8px 0 4px">Static versions</h3>
+      <p class="lede">Same artwork as flat WebP in <code>assets/icons/static/</code> — a no-JS fallback for email, print, dense lists, or anywhere the player isn't loaded. Transparent background, so they sit on any surface.</p>
+      <div class="demo">
+        <div class="icon-grid icon-grid-static">
+          <figure><img src="assets/icons/static/advanced-manufacturing.webp" alt="Advanced Manufacturing" width="64" height="64"><figcaption>Advanced Manufacturing</figcaption></figure>
+          <figure><img src="assets/icons/static/arts-entertainment-design.webp" alt="Arts, Entertainment &amp; Design" width="64" height="64"><figcaption>Arts, Entertainment &amp; Design</figcaption></figure>
+          <figure><img src="assets/icons/static/construction.webp" alt="Construction" width="64" height="64"><figcaption>Construction</figcaption></figure>
+          <figure><img src="assets/icons/static/digital-technology.webp" alt="Digital Technology" width="64" height="64"><figcaption>Digital Technology</figcaption></figure>
+          <figure><img src="assets/icons/static/education.webp" alt="Education" width="64" height="64"><figcaption>Education</figcaption></figure>
+          <figure><img src="assets/icons/static/energy-natural-resources.webp" alt="Energy &amp; Natural Resources" width="64" height="64"><figcaption>Energy &amp; Natural Resources</figcaption></figure>
+          <figure><img src="assets/icons/static/financial-services.webp" alt="Financial Services" width="64" height="64"><figcaption>Financial Services</figcaption></figure>
+          <figure><img src="assets/icons/static/healthcare-human-services.webp" alt="Healthcare &amp; Human Services" width="64" height="64"><figcaption>Healthcare &amp; Human Services</figcaption></figure>
+          <figure><img src="assets/icons/static/hospitality-events-tourism.webp" alt="Hospitality, Events &amp; Tourism" width="64" height="64"><figcaption>Hospitality, Events &amp; Tourism</figcaption></figure>
+          <figure><img src="assets/icons/static/management-entrepreneurship.webp" alt="Management &amp; Entrepreneurship" width="64" height="64"><figcaption>Management &amp; Entrepreneurship</figcaption></figure>
+          <figure><img src="assets/icons/static/marketing-sales.webp" alt="Marketing &amp; Sales" width="64" height="64"><figcaption>Marketing &amp; Sales</figcaption></figure>
+          <figure><img src="assets/icons/static/public-service-safety.webp" alt="Public Service &amp; Safety" width="64" height="64"><figcaption>Public Service &amp; Safety</figcaption></figure>
+          <figure><img src="assets/icons/static/supply-chain-transportation.webp" alt="Supply Chain &amp; Transportation" width="64" height="64"><figcaption>Supply Chain &amp; Transportation</figcaption></figure>
+          <figure class="needs-fix"><img src="assets/icons/static/agriculture.webp" alt="Agriculture" width="64" height="64"><figcaption>Agriculture <span title="Same source bug — currently the Advanced Manufacturing icon">⚠</span></figcaption></figure>
+        </div>
+      </div>
+<pre class="code">&lt;img src="assets/icons/static/construction.webp" alt="Construction" width="64" height="64"&gt;</pre>
+      <p class="lede" style="font-size:var(--h2c-font-size-sm)"><b>Note:</b> <code>agriculture.json</code> and <code>agriculture.webp</code> currently hold the Advanced Manufacturing artwork (flagged ⚠). Drop corrected exports at the same paths and they update everywhere automatically.</p>
     </section>
 
     <section id="buttons">
